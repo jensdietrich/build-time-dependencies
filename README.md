@@ -19,7 +19,7 @@ build locally (in `scenario1/bar1.0`) and deploy in local repos 1 and 2:
 2.  `mvn install:install-file -Dfile=target/bar-1.0.0.jar -DpomFile=pom.xml -DlocalRepositoryPath=../local-mvn-repo-1`
 3. `mvn install:install-file -Dfile=target/bar-1.0.0.jar -DpomFile=pom.xml -DlocalRepositoryPath=../local-mvn-repo-2`
 
-Note: also deploy this component in `local-mvn-repo-2` as we simulate a timeline of a single repo, and once deployed a component cannot be removed from the repository.
+Note: we also must deploy this component in `local-mvn-repo-2` as we simulate a timeline of a single repo, and once deployed a component cannot be removed from the repository.
 
 ## build and install bar1.1
 
@@ -30,7 +30,7 @@ build locally (in `scenario1/bar1.1`) and deploy in local repo 2 **only**:
 
 ## build and test foo1.0.0
 
-in `scenario1/foo`, build with repo1, simulating an earlier point in time when only `bar1.0` is available. The (disassembled) bytecode is captured in a file for analysis.
+in `scenario1/foo`, build with repo 1, simulating an earlier point in time when only `bar1.0` is available. The (disassembled) bytecode is captured in a file for analysis.
 
 1. `mvn -Dmaven.repo.local=../local-mvn-repo-1 clean test`
 2. `javap -v target/classes/foo/Foo.class > Foo.javap.1`

@@ -36,7 +36,7 @@ in `scenario1/foo`, build with repo 1, simulating an earlier point in time when 
 2. `javap -v target/classes/foo/Foo.class > Foo.javap.1`
 
 
-then do the same again, changing the local repo to a later version, simulating a later point in time when `bar1.1` has become available. 
+then do the same again, changing the local repo to repo 2, simulating a later point in time when `bar1.1` has become available. 
 
 
 1. `mvn -Dmaven.repo.local=../local-mvn-repo-2 clean test`
